@@ -1,74 +1,105 @@
-import { Image, StyleSheet, Platform } from 'react-native';
+import { View, Text, StyleSheet, Image, ScrollView } from 'react-native';
 
-import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
-
-export default function HomeScreen() {
+export default function Index () {
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12'
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          Tap the Explore tab to learn more about what's included in this starter app.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          When you're ready, run{' '}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+    
+    <ScrollView>
+      <View>
+        <Text style={styles.text}>Lugares populares</Text>
+      </View>
+
+      <View style={styles.viewPrincipal}>
+        <View style={styles.card}>
+          <Image
+            style={styles.imagem}
+            source={{
+              uri: "https://cosmosgroup.sgp1.cdn.digitaloceanspaces.com/news/details/2162882_niladri-lake-sunamganj-Bangladesh.jpg",
+            }}
+          />
+          <Text>Lugar 1</Text>
+          <Text>Price 470$</Text>
+          <Text>⭐⭐⭐⭐4.0</Text>
+        </View>
+
+        <View style={styles.card}>
+          <Image
+            style={styles.imagem}
+            source={{
+              uri: "https://www.steppestravel.com/app/uploads/2019/07/pool-casa-las-tortugas-isla-holbox-mexico-1024x544.jpg",
+            }}
+          />
+          <Text>Lugar 2</Text>
+          <Text>Price 290$</Text>
+          <Text>⭐⭐2.0</Text>
+        </View>
+
+        <View style={styles.card}>
+          <Image
+            style={styles.imagem}
+            source={{
+              uri: "https://pix10.agoda.net/hotelImages/108/10825/10825_15102810490037233735.jpg?s=1024x768",
+            }}
+          />
+          <Text>Lugar 3</Text>
+          <Text>Price 300$</Text>
+          <Text>⭐⭐⭐⭐⭐ 5.0</Text>
+        </View>
+
+        <View style={styles.card}>
+          <Image
+            style={styles.imagem}
+            source={{
+              uri: "https://exp.cdn-hotels.com/hotels/19000000/18800000/18798800/18798741/f3a8159e_y.jpg?impolicy=fcrop&w=1000&h=666&q=medium",
+            }}
+          />
+          <Text>Lugar 4</Text>
+          <Text>Price 500$</Text>
+          <Text>⭐⭐⭐3.0</Text>
+        </View>
+
+      </View>
+    </ScrollView>
   );
 }
 
+//Criar os estilos separadamente
 const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
+  viewPrincipal: {
+    justifyContent: "center",
+    display: "flex",
+    flexWrap: "wrap",
+    flexDirection: "row",
+    
+    
   },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
+
+  imagem: {
+    borderTopRightRadius: 20,
+    borderTopLeftRadius: 20,
+    height: 120,
+    width: 180,
+    boxShadow: "0px 0px 10px rgba(0,0,0,0.9)",
+    marginBottom: 10,
   },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
+  text: {
+    fontSize: 20,
+    textAlign: "center",
+    fontWeight: 600,
+    margin: 30,
+    marginTop: 20,
   },
+
+  card: {
+    margin: 10,
+    width: 180,
+    borderRadius: 20,
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "white",
+    boxShadow: "0px 0px 10px rgba(0,0,0,0.3)",
+  },
+
+  textCard: {},
 });
