@@ -3,10 +3,12 @@ import { View, Text, StyleSheet, Image, ScrollView } from "react-native";
 export default function Index() {
   return (
     <ScrollView>
+      
       <View>
         <Text style={styles.text}>Popular Placess</Text>
       </View>
-      <View style={styles.viewPrincipal}>
+
+      <View style={styles.viewPrincipal}>        
         <View style={styles.card}>
           <Image
             style={styles.imagem}
@@ -14,10 +16,11 @@ export default function Index() {
               uri: "https://cosmosgroup.sgp1.cdn.digitaloceanspaces.com/news/details/2162882_niladri-lake-sunamganj-Bangladesh.jpg",
             }}
           />
-          <Text>Lugar 1 .</Text>
+          <Text>Lugar 1</Text>
           <Text>Preço R$470</Text>
           <Text>⭐⭐⭐⭐4.0</Text>
         </View>
+        
         <View style={styles.card}>
           <Image
             style={styles.imagem}
@@ -29,6 +32,7 @@ export default function Index() {
           <Text>Price R$290</Text>
           <Text>⭐⭐2.0</Text>
         </View>
+
         <View style={styles.card}>
           <Image
             style={styles.imagem}
@@ -40,6 +44,7 @@ export default function Index() {
           <Text>Price R$300</Text>
           <Text>⭐⭐⭐⭐⭐ 5.0</Text>
         </View>
+
         <View style={styles.card}>
           <Image
             style={styles.imagem}
@@ -55,6 +60,7 @@ export default function Index() {
     </ScrollView>
   );
 }
+
 
 
 const styles = StyleSheet.create({
@@ -73,7 +79,6 @@ const styles = StyleSheet.create({
     width: 300,
     alignSelf: "center",
     borderColor: "black",
-    
   },
   
   viewPrincipal: {
@@ -82,6 +87,8 @@ const styles = StyleSheet.create({
     flexWrap: "wrap",
     flexDirection: "row",
     backgroundColor: "",
+    padding: 10,
+    fontStyle: "italic",
     
   },
 
@@ -94,8 +101,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "white",
-    boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.3)",
-    fontFamily: "sans-serif",
+    boxShadow: "0px 0px 10px rgba(17, 17, 17, 0.3)",
   },
 
   imagem: {
@@ -108,6 +114,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     borderBottomWidth: 1,
   },
+  
 
   text: {
     color: "black",
